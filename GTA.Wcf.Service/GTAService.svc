@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="GTA.Wcf.Service.GTAService" CodeBehind="GTAService.svc.cs" %>
