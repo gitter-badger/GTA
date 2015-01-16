@@ -22,6 +22,10 @@ Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "GTA.Installer", "GTA.Instal
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.GTA.UnitTest", "2.GTA.UnitTest", "{623A8CE2-FA3C-4783-B7FB-CB6070CF1645}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.GTA.Wcf.Service", "5.GTA.Wcf.Service", "{ABCB323B-2F80-4468-8A01-8EAE7496EE36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.GTA.Windows.Service", "6.GTA.Windows.Service", "{9CEF106B-B431-4CCA-9DC7-318448F4FCB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

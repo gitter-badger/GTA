@@ -10,27 +10,27 @@ Write-Host ("Script has now started")
 Write-Host ("This should give the correct directory: " + $Env:WORKSPACE)
 
 # Make sure there is a build number
-if (-not $Env:SQLREFRESHDB_VERSION)
+if (-not $Env:GTA_VERSION)
 {
-	Write-Error ("SQLREFRESHDB_VERSION environment variable is missing.")
+	Write-Error ("GTA_VERSION environment variable is missing.")
 	exit 1
 }
-Write-Host "SQLREFRESHDB_VERSION: $Env:SQLREFRESHDB_VERSION"
-Write-Verbose "SQLREFRESHDB_VERSION: $Env:SQLREFRESHDB_VERSION"
+Write-Host "GTA_VERSION: $Env:GTA_VERSION"
+Write-Verbose "GTA_VERSION: $Env:GTA_VERSION"
 	
 # Get and validate the version data
-$VersionData = [regex]::matches($Env:SQLREFRESHDB_VERSION,$VersionRegex)
+$VersionData = [regex]::matches($Env:GTA_VERSION,$VersionRegex)
 switch($VersionData.Count)
 {
    0		
       { 
-         Write-Error "Could not find version number data in SQLREFRESHDB_VERSION."
+         Write-Error "Could not find version number data in GTA_VERSION."
          exit 1
       }
    1 {}
    default 
       { 
-         Write-Warning "Found more than instance of version data in SQLREFRESHDB_VERSION." 
+         Write-Warning "Found more than instance of version data in GTA_VERSION." 
          Write-Warning "Will assume first instance is version."
       }
 }
