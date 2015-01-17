@@ -4,7 +4,8 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using LibInfluxDB;
+using LibInfluxDB.NET;
+using NLog;
 
 namespace GTA.Wcf.Service
 {
@@ -12,6 +13,8 @@ namespace GTA.Wcf.Service
     // NOTE: In order to launch WCF Test Client for testing this service, please select GTAService.svc or GTAService.svc.cs at the Solution Explorer and start debugging.
     public class GTAService : IGTAService
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         //public async void Write_Metric(double number1, double number2, double result)
         //{
         //    var _db = new LibInfluxDB.Net.InfluxDb("http://influxdbserver:8086", "naampje", "wachtwoord");

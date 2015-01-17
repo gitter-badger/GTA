@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTA.Windows.Console", "GTA.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTA.Windows.Service", "GTA.Windows.Service\GTA.Windows.Service.csproj", "{A7D535D1-6A78-4775-A688-58DFFF748A35}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8.GTA.Shared.Components", "8.GTA.Shared.Components", "{46C1A411-1896-4705-A519-C0F660E97DB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTA.Shared.Components", "GTA.Shared.Components\GTA.Shared.Components.csproj", "{AFC2094E-2713-4198-A97B-0D0922C496BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,16 @@ Global
 		{A7D535D1-6A78-4775-A688-58DFFF748A35}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{A7D535D1-6A78-4775-A688-58DFFF748A35}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{A7D535D1-6A78-4775-A688-58DFFF748A35}.Release|x86.ActiveCfg = Release|Any CPU
+		{AFC2094E-2713-4198-A97B-0D0922C496BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFC2094E-2713-4198-A97B-0D0922C496BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFC2094E-2713-4198-A97B-0D0922C496BE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AFC2094E-2713-4198-A97B-0D0922C496BE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AFC2094E-2713-4198-A97B-0D0922C496BE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AFC2094E-2713-4198-A97B-0D0922C496BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFC2094E-2713-4198-A97B-0D0922C496BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFC2094E-2713-4198-A97B-0D0922C496BE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AFC2094E-2713-4198-A97B-0D0922C496BE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AFC2094E-2713-4198-A97B-0D0922C496BE}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,5 +136,6 @@ Global
 		{9F0FD28F-06EA-410B-BBDE-9A2EDE92CFE6} = {ABCB323B-2F80-4468-8A01-8EAE7496EE36}
 		{39E36100-A500-47EF-BB9C-E07E17282F35} = {F02A3EE0-FAFB-44C0-86E4-4E1E108F9689}
 		{A7D535D1-6A78-4775-A688-58DFFF748A35} = {9CEF106B-B431-4CCA-9DC7-318448F4FCB1}
+		{AFC2094E-2713-4198-A97B-0D0922C496BE} = {46C1A411-1896-4705-A519-C0F660E97DB0}
 	EndGlobalSection
 EndGlobal
