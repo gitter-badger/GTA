@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using Stopwatch = System.Diagnostics.Stopwatch;
 using LibInfluxDB;
+using NLog;
 
 namespace GTA.Wcf.Service
 {
@@ -13,6 +14,21 @@ namespace GTA.Wcf.Service
     // NOTE: In order to launch WCF Test Client for testing this service, please select GTAService.svc or GTAService.svc.cs at the Solution Explorer and start debugging.
     public class GTAService : IGTAService
     {
+<<<<<<< HEAD
+=======
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
+        //public async void Write_Metric(double number1, double number2, double result)
+        //{
+        //    var _db = new LibInfluxDB.Net.InfluxDb("http://influxdbserver:8086", "naampje", "wachtwoord");
+        //    string dbName = "GTACalculator";
+        //    LibInfluxDB.Net.Models.Serie serie = new LibInfluxDB.Net.Models.Serie.Builder("GTA.Wcf.Service")
+        //        .Columns("First", "Second", "Result")
+        //        .Values(number1, number2, result)
+        //        .Build();
+        //    LibInfluxDB.Net.InfluxDbApiResponse writeResponse = await _db.WriteAsync(dbName, LibInfluxDB.Net.TimeUnit.Milliseconds, serie);
+        //}
+>>>>>>> origin/master
         public double AddNumbers(double number1, double number2)
         {
             var sendMetric = new GTAMetricHandler();
