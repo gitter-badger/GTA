@@ -21,6 +21,7 @@ namespace GTA.Wcf.Service
             var sendMetric = new GTAMetricHandler();
             double result = number1 + number2;
             sendMetric.Write_Metric(number1, number2, result, "AddNumbers");
+            logger.Debug("Blablabla");
             return result;
         }
 

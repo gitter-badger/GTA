@@ -13,9 +13,18 @@ namespace GTA.Windows.Console
         {
             GTAServiceClient client = new GTAServiceClient();
 
-            double addResult = client.AddNumbers(5, 3);
+            System.Console.WriteLine("Write a number for x");
+            int x = Convert.ToInt32(System.Console.ReadLine());
+
+            System.Console.WriteLine("Write a number for y");
+            int y = Convert.ToInt32(System.Console.ReadLine());
+
+            double addResult = client.AddNumbers(x, y);
+
             System.Console.WriteLine("And the awesome result is:");
             System.Console.WriteLine(addResult);
+
+
             System.Console.ReadLine();
         }
     }
