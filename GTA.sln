@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.SolutionItems", "0.SolutionItems", "{6FED5541-E62A-46E9-8AFE-EF421643C545}"
 	ProjectSection(SolutionItems) = preProject
 		ApplyVersionToAssemblies.ps1 = ApplyVersionToAssemblies.ps1
+		Issues.txt = Issues.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.GTA.Database.Schema", "3.GTA.Database.Schema", "{74B6AB23-D9A4-420A-9522-9C10083D25B4}"
