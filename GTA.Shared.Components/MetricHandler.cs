@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace GTA.Shared.Components
 {
-    public class MetricHandler : ConfigurationSection
+    public class MetricHandler : ConfigurationSection, IMetricHandler
     {
         public async void Write_Metric(double number1, double number2, double result, string calculation) // TO-DO Overload can be variable
         {

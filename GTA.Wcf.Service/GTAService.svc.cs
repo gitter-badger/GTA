@@ -48,8 +48,14 @@ namespace GTA.Wcf.Service
             sendMetric.Write_Metric(number1, number2, result, "DivisionNumbers");
             return result;
         }
+
         protected virtual void FinalizeSetUp()
         {
         }
-    }
+    
+        public void Write_Metric(string poep, string pap)
+        {
+ 	        throw new NotImplementedException();
+        }
+}
 }
