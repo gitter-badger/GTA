@@ -30,8 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LibInfluxDB.NET">
-      <HintPath>..\..\LibInfluxDB.NET\LibInfluxDB.NET\bin\Debug\LibInfluxDB.NET.dll</HintPath>
+    <Reference Include="LibInfluxDB.NET, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\InfluxDB.NET.1.0.0\lib\LibInfluxDB.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -48,7 +49,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestTypes.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
