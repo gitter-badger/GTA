@@ -39,8 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LibInfluxDB.NET">
-      <HintPath>..\GTA.Shared.Components\External\LibInfluxDB.NET.dll</HintPath>
+    <Reference Include="LibInfluxDB.NET, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\InfluxDB.NET.1.0.0\lib\LibInfluxDB.NET.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NLog">
