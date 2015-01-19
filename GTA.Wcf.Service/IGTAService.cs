@@ -19,7 +19,7 @@ namespace GTA.Wcf.Service
         double MultiplyNumbers(double number1, double number2);
         [OperationContract]
         double DivisionNumbers(double number1, double number2);
-        [OperationContract]
+        //[OperationContract]
 
     }
 }

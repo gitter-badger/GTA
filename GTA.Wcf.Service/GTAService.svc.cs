@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using LibInfluxDB.NET;
+using LibInfluxDB;
 using NLog;
 
 namespace GTA.Wcf.Service

@@ -40,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LibInfluxDB.NET">
-      <HintPath>..\..\LibInfluxDB.NET\LibInfluxDB.NET\bin\Debug\LibInfluxDB.NET.dll</HintPath>
+      <HintPath>..\GTA.Shared.Components\External\LibInfluxDB.NET.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NLog">
