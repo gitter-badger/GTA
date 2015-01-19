@@ -6,9 +6,9 @@ using System.Text;
 using System.Configuration;
 using System.Xml;
 
-namespace GTA.Wcf.Service
+namespace GTA.Shared.Components
 {
-    public class GTAMetricHandler : ConfigurationSection
+    public class MetricHandler : ConfigurationSection
     {
         public async void Write_Metric(double number1, double number2, double result, string calculation) // TO-DO Overload can be variable
         {
@@ -25,12 +25,12 @@ namespace GTA.Wcf.Service
             LibInfluxDB.Net.InfluxDbApiResponse writeResponse = await _db.WriteAsync(dbName, LibInfluxDB.Net.TimeUnit.Milliseconds, serie);
         }
 
-        public class MetricParser
-        {
-            public string InputValue1 { get; set; }
-            public string InputValue2 { get; set; }
-            public string Result { get; set; }
-            public string Calculation { get; set; }
-        }
+        //public class MetricParser
+        //{
+        //    public string InputValue1 { get; set; }
+        //    public string InputValue2 { get; set; }
+        //    public string Result { get; set; }
+        //    public string Calculation { get; set; }
+        //}
     }
 }

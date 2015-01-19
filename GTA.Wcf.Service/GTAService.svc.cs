@@ -5,8 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using Stopwatch = System.Diagnostics.Stopwatch;
-using LibInfluxDB;
 using NLog;
+using GTA.Shared.Components;
 
 namespace GTA.Wcf.Service
 {
@@ -18,7 +18,7 @@ namespace GTA.Wcf.Service
 
         public double AddNumbers(double number1, double number2)
         {
-            var sendMetric = new GTAMetricHandler();
+            var sendMetric = new MetricHandler();
             double result = number1 + number2;
             sendMetric.Write_Metric(number1, number2, result, "AddNumbers");
             logger.Debug("Blablabla");
@@ -27,7 +27,7 @@ namespace GTA.Wcf.Service
 
         public double SubstractNumbers(double number1, double number2)
         {
-            var sendMetric = new GTAMetricHandler();
+            var sendMetric = new MetricHandler();
             double result = number1 - number2;
             sendMetric.Write_Metric(number1, number2, result, "SubstractNumbers");
             return result;
@@ -35,7 +35,7 @@ namespace GTA.Wcf.Service
 
         public double MultiplyNumbers(double number1, double number2)
         {
-            var sendMetric = new GTAMetricHandler();
+            var sendMetric = new MetricHandler();
             double result = number1 * number2;
             sendMetric.Write_Metric(number1, number2, result, "MultiplyNumbers");
             return result;
@@ -43,7 +43,7 @@ namespace GTA.Wcf.Service
 
         public double DivisionNumbers(double number1, double number2)
         {
-            var sendMetric = new GTAMetricHandler();
+            var sendMetric = new MetricHandler();
             double result = number1 / number2;
             sendMetric.Write_Metric(number1, number2, result, "DivisionNumbers");
             return result;
