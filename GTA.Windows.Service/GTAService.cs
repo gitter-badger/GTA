@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
+using NLog;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,5 +27,7 @@ namespace GTA.Windows.Service
         {
             // TODO: Add code here to perform any tear-down necessary to stop your service.
         }
+
+        private static Logger logger = LogManager.GetCurrentClassLogger();
     }
 }
