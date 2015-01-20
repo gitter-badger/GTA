@@ -16,29 +16,29 @@ namespace GTA.UnitTest
             Assert.Equal(4, Add(2, 2));
         }
 
-        [Fact]
-        public void TestAddNumbers()
-        {
+        //[Fact]
+        //public void TestAddNumbers()
+        //{
 
-            int x = 5;
-            int y = 7;
+        //    int x = 5;
+        //    int y = 7;
 
-            Assert.Equal(12, AddNumbers(x, y));
-        }
+        //    Assert.Equal(12, AddNumbers(x, y));
+        //}
 
         int Add(int x, int y)
         {
             return x + y;
         }
 
-        public double AddNumbers(int x, int y)
-        {
-            using (var client = new GTAServiceClient())
-            {
-                double result = client.AddNumbers(x, y);
+        //public double AddNumbers(int x, int y)
+        //{
+        //    using (var client = new GTAServiceClient())
+        //    {
+        //        double result = client.AddNumbers(x, y);
 
-                return result;
-            }
-        }
+        //        return result;
+        //    }
+        //}
     }
 }
