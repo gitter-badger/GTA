@@ -8,7 +8,7 @@ namespace GTA.Shared.Components
 {
     public interface IMetricHandler
     {
-        void Write_Metric(double number1, double number2, double result, string calculation);
+        void CalcValues(double number1, double number2, double result, string typeofcalculation);
         // As long as its calculator we use: (double)INPUT1, (double)INPUT2, (double)RESULT, type of (string)CALCULATION (1 2 3 AddNumbers)
     }
 }
