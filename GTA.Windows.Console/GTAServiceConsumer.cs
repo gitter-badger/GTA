@@ -1,4 +1,4 @@
-﻿using GTA.Windows.Console.GTAService;
+﻿using GTA.Windows.Console.GTAWebService;
 using System;
 using System.Collections.Generic;
 using System.Linq;

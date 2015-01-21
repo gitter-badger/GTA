@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GTA.UnitTest.GTAService {
+namespace GTA.Windows.Console.GTAWebService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="GTAService.IGTAService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="GTAWebService.IGTAService")]
     public interface IGTAService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGTAService/AddNumbers", ReplyAction="http://tempuri.org/IGTAService/AddNumbersResponse")]
@@ -41,12 +41,12 @@ namespace GTA.UnitTest.GTAService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IGTAServiceChannel : GTA.UnitTest.GTAService.IGTAService, System.ServiceModel.IClientChannel {
+    public interface IGTAServiceChannel : GTA.Windows.Console.GTAWebService.IGTAService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GTAServiceClient : System.ServiceModel.ClientBase<GTA.UnitTest.GTAService.IGTAService>, GTA.UnitTest.GTAService.IGTAService {
+    public partial class GTAServiceClient : System.ServiceModel.ClientBase<GTA.Windows.Console.GTAWebService.IGTAService>, GTA.Windows.Console.GTAWebService.IGTAService {
         
         public GTAServiceClient() {
         }

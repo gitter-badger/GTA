@@ -100,6 +100,10 @@
       <Project>{afc2094e-2713-4198-a97b-0d0922c496be}</Project>
       <Name>GTA.Shared.Components</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GTA.Web.Engine\GTA.Web.Engine.csproj">
+      <Project>{29081e91-bfce-45ba-807b-2b06f2444094}</Project>
+      <Name>GTA.Web.Engine</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
