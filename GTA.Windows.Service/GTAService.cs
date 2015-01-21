@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using GTA.Shared.Components;
-//using GTA.Windows.Service.GTAWebService;
 
 namespace GTA.Windows.Service
 {
@@ -21,15 +20,24 @@ namespace GTA.Windows.Service
         Timer tm = new Timer();
         Stopwatch sw = new Stopwatch();
 
+
         public GTAService()
         {
-            #if DEBUG
-                logger.Debug("Service Starting, attaching debugger");
-                System.Diagnostics.Debugger.Launch();
-            #endif
+#if DEBUG
+            logger.Debug("Service Starting, attaching debugger");
+            System.Diagnostics.Debugger.Launch();
+#endif
             sw.Start();
             InitializeComponent();
+            try
+            {
+                //this.objScheduleInfo = (ScheduleInfo)ConfigurationManager.GetSection("schedules");
 
+            }
+            catch
+            {
+                logger.Debug("Inladen ging niet goed");
+            };
             tm.Interval = 5000;
             tm.Elapsed += new ElapsedEventHandler(PerformOperations);
             tm.Start();
@@ -39,7 +47,7 @@ namespace GTA.Windows.Service
         {
             // TODO: Add code here to start your service.
             sw.Stop();
-            logger.Info("Service Started in "+sw.ElapsedMilliseconds.ToString()+" milliseconds");
+            logger.Info("Service Started in " + sw.ElapsedMilliseconds.ToString() + " milliseconds");
             sw.Stop();
             //sendMetric.Write_Metric(sw.ElapsedMilliseconds, "GTA.Windows.Service.StartupTime");
 
@@ -56,10 +64,16 @@ namespace GTA.Windows.Service
             logger.Info("I am going to multiply 5 with 6");
             sw.Restart();
             GTAWebService.GTAServiceClient client = new GTAWebService.GTAServiceClient();
-            double addResult = client.MultiplyNumbers(5, 6);
-            sw.Stop();
-            logger.Info("And the awesome result is: "+addResult.ToString());
-            logger.Debug("Which took me " + sw.ElapsedMilliseconds.ToString() + " milliseconds");
+            try { 
+                double addResult = client.MultiplyNumbers(5, 6);
+                sw.Stop();
+                logger.Info("And the awesome result is: "+addResult.ToString());
+                logger.Debug("Which took me " + sw.ElapsedMilliseconds.ToString() + " milliseconds");
+            }
+            catch (Exception ex) {
+                sw.Stop();
+                logger.Error("Error when performing action PerformOperations: " + ex.Message);                
+            }
         }
 
     }
