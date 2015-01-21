@@ -6,17 +6,23 @@ using System.Text;
 using System.Configuration;
 using System.Xml;
 using System.Threading.Tasks;
+using NLog;
 
 namespace GTA.Shared.Components
 {
     public class WriteMetric : ConfigurationSection, IMetricHandler
     {
+        string useInfluxDB = ConfigurationManager.AppSettings["useInfluxdb"].ToLower();
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+       
         // Get basic influxdb config
-        string myFirstpony = ConfigurationManager.AppSettings["influxdburl"];
+        
+        string myFirstpony = ConfigurationManager.AppSettings["influxdburl"].ToLower();
         string mySecondpony = ConfigurationManager.AppSettings["influxdbuser"];
         string myThirdpony = ConfigurationManager.AppSettings["influxdbpass"];
         string influxdbdb = ConfigurationManager.AppSettings["influxdbdb"];
-
+        
+        // Build payload and send it to influxdb
         public async Task<string> pushMetric(string metricName, string[] Columns, object[] Values)
         {
             object[] objSerie = new object[3];
@@ -26,19 +32,22 @@ namespace GTA.Shared.Components
             LibInfluxDB.Net.InfluxDbApiResponse pushMetric = await influxConnect.WriteAsync(influxdbdb, LibInfluxDB.Net.TimeUnit.Milliseconds, metricPayload);
             return "Metric sent";
         }
-
-        public async void CalcValues(double number1, double number2, double result, string typeofcalculation)
+        
+        public async void SendMetrics(string TimeSerie, string[] Columns, object[] Values)
         {
-            string metricName = typeofcalculation;
-            String[] Columns = new String[3];
-            Columns[0] = "FirstValue";
-            Columns[1] = "SecondValue";
-            Columns[2] = "ThirdValue";
-            object[] Values = new object[3];
-            Values[0] = number1;
-            Values[1] = number2;
-            Values[2] = result;
-            await pushMetric(metricName, Columns, Values);
+            if (useInfluxDB == "true")
+            {
+                await pushMetric(TimeSerie, Columns, Values);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }
+
+
+
+
+// <add key="useInfluxdb" value="true" />
