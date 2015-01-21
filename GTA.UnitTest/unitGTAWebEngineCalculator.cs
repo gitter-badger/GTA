@@ -10,32 +10,70 @@ namespace GTA.UnitTest
 {
     public class unitGTAWebEngineCalculator
     {
+        // Variables for the facts
+        private int x = 70;
+        private int y = 7;
+        
+        // Facts for all the unit tests
         [Fact]
-        public void PassingTest()
+        public void TestAddNumbers()
         {
-            Assert.Equal(4, Add(2, 2));
+            Assert.Equal(77, AddNumbers(x, y));
         }
 
-        //[Fact]
-        //public void TestAddNumbers()
-        //{
-
-        //    int x = 5;
-        //    int y = 7;
-
-        //    Assert.Equal(12, AddNumbers(x, y));
-        //}
-
-        int Add(int x, int y)
+        [Fact]
+        public void TestSubstractNumbers()
         {
-            return x + y;
+            Assert.Equal(63, SubstractNumbers(x, y));
         }
+
+        [Fact]
+        public void TestMultiplyNumbers()
+        {
+            Assert.Equal(490, MultiplyNumbers(x, y));
+        }
+
+        [Fact]
+        public void TestDivisionNumbers()
+        {
+            Assert.Equal(10, DivisionNumbers(x, y));
+        }
+
+
+        // Run the actual methods
 
         double AddNumbers(int x, int y)
         {
             Calculator calc = new Calculator();
 
             double result = calc.AddNumbers(x, y);
+
+            return result;
+        }
+
+        double SubstractNumbers(int x, int y)
+        {
+            Calculator calc = new Calculator();
+
+            double result = calc.SubstractNumbers(x, y);
+
+            return result;
+        }
+
+        double MultiplyNumbers(int x, int y)
+        {
+            Calculator calc = new Calculator();
+
+            double result = calc.MultiplyNumbers(x, y);
+
+            return result;
+        }
+
+        double DivisionNumbers(int x, int y)
+        {
+            Calculator calc = new Calculator();
+
+            double result = calc.DivisionNumbers(x, y);
 
             return result;
         }

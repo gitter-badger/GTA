@@ -1,9 +1,9 @@
-﻿using GTA.Windows.Console.GTAWebService;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GTA.Web.Engine;
 
 namespace GTA.Windows.Console
 {
@@ -11,7 +11,7 @@ namespace GTA.Windows.Console
     {
         static void Main(string[] args)
         {
-            GTAServiceClient client = new GTAServiceClient();
+            Calculator client = new Calculator();
 
             System.Console.WriteLine("Write a number for x");
             int x = Convert.ToInt32(System.Console.ReadLine());
