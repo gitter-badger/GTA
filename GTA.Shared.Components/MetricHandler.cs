@@ -5,32 +5,40 @@ using System.Web;
 using System.Text;
 using System.Configuration;
 using System.Xml;
+using System.Threading.Tasks;
 
 namespace GTA.Shared.Components
 {
-    public class MetricHandler : ConfigurationSection, IMetricHandler
+    public class WriteMetric : ConfigurationSection, IMetricHandler
     {
-        public async void Write_Metric(double number1, double number2, double result, string calculation) // TO-DO Overload can be variable
+        // Get basic influxdb config
+        string myFirstpony = ConfigurationManager.AppSettings["influxdburl"];
+        string mySecondpony = ConfigurationManager.AppSettings["influxdbuser"];
+        string myThirdpony = ConfigurationManager.AppSettings["influxdbpass"];
+        string influxdbdb = ConfigurationManager.AppSettings["influxdbdb"];
+
+        public async Task<string> pushMetric(string metricName, string[] Columns, object[] Values)
         {
-            string myFirstpony = ConfigurationManager.AppSettings["influxdburl"];
-            string mySecondpony = ConfigurationManager.AppSettings["influxdbuser"];
-            string myThirdpony = ConfigurationManager.AppSettings["influxdbpass"];
-            //var _db = new LibInfluxDB.Net.InfluxDb("http://influxdbservert:8086", "gebruikert", "wachtwoordje"); // TO-DO Use web.conf for this.
-            var _db = new LibInfluxDB.Net.InfluxDb(myFirstpony, mySecondpony, myThirdpony); // TO-DO Use web.conf for this.
-            string dbName = "GTACalculator";
-            LibInfluxDB.Net.Models.Serie serie = new LibInfluxDB.Net.Models.Serie.Builder("GTA.Wcf.Service")
-                .Columns("First", "Second", "Result", "Calculation") // TO-DO Overload can be variable
-                .Values(number1, number2, result, calculation) // TO-DO Overload can be variable
-                .Build();
-            LibInfluxDB.Net.InfluxDbApiResponse writeResponse = await _db.WriteAsync(dbName, LibInfluxDB.Net.TimeUnit.Milliseconds, serie);
+            object[] objSerie = new object[3];
+            LibInfluxDB.Net.InfluxDb influxConnect = new LibInfluxDB.Net.InfluxDb(myFirstpony, mySecondpony, myThirdpony);
+
+            LibInfluxDB.Net.Models.Serie metricPayload = new LibInfluxDB.Net.Models.Serie.Builder(metricName).Columns(Columns).Values(Values).Build();
+            LibInfluxDB.Net.InfluxDbApiResponse pushMetric = await influxConnect.WriteAsync(influxdbdb, LibInfluxDB.Net.TimeUnit.Milliseconds, metricPayload);
+            return "Metric sent";
         }
 
-        //public class MetricParser
-        //{
-        //    public string InputValue1 { get; set; }
-        //    public string InputValue2 { get; set; }
-        //    public string Result { get; set; }
-        //    public string Calculation { get; set; }
-        //}
+        public async void CalcValues(double number1, double number2, double result, string typeofcalculation)
+        {
+            string metricName = typeofcalculation;
+            String[] Columns = new String[3];
+            Columns[0] = "FirstValue";
+            Columns[1] = "SecondValue";
+            Columns[2] = "ThirdValue";
+            object[] Values = new object[3];
+            Values[0] = number1;
+            Values[1] = number2;
+            Values[2] = result;
+            await pushMetric(metricName, Columns, Values);
+        }
     }
 }
