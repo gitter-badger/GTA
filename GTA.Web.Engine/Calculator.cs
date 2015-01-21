@@ -15,38 +15,59 @@ namespace GTA.Web.Engine
 
         public double AddNumbers(double number1, double number2)
         {
-            var sendMetric = new WriteMetric();
+            var metrics = new WriteMetric();
             double result = number1 + number2;
-            string typeofcalculation = "AddNumbers";
-            sendMetric.CalcValues(number1, number2, result, typeofcalculation);
+
+            // Send results as metrics to metric database
+            string TimeSerie = "AddNumbers";
+            object[] Values = new object[3] { number1, number2, result };
+            string[] Columns = new string[3] { "Value1", "Value2", "Result" };
+            metrics.SendMetrics(TimeSerie, Columns, Values);
+
+            // Do some debugging logging blurp
             logger.Debug("Blablabla");
             return result;
         }
 
         public double SubstractNumbers(double number1, double number2)
         {
-            var sendMetric = new WriteMetric();
+            var metric = new WriteMetric();
             double result = number1 - number2;
-            string typeofcalculation = "SubstractNumbers";
-            sendMetric.CalcValues(number1, number2, result, typeofcalculation);
+
+            // Send results as metrics to metric database
+            string TimeSerie = "SubstractNumbers";
+            object[] Values = new object[3] { number1, number2, result };
+            string[] Columns = new string[3] { "Value1", "Value2", "Result" };
+            metric.SendMetrics(TimeSerie, Columns, Values);
+            // Done
             return result;
         }
 
         public double MultiplyNumbers(double number1, double number2)
         {
-            var sendMetric = new WriteMetric();
+            var metric = new WriteMetric();
             double result = number1 * number2;
-            string typeofcalculation = "MultiplyNumbers";
-            sendMetric.CalcValues(number1, number2, result, typeofcalculation);
+
+            // Send results as metrics to metric database
+            string TimeSerie = "MultiplyNumbers";
+            object[] Values = new object[3] { number1, number2, result };
+            string[] Columns = new string[3] { "Value1", "Value2", "Result" };
+            metric.SendMetrics(TimeSerie, Columns, Values);
+            // Done
             return result;
         }
 
         public double DivisionNumbers(double number1, double number2)
         {
-            var sendMetric = new WriteMetric();
+            var metric = new WriteMetric();
             double result = number1 / number2;
-            string typeofcalculation = "DivisionNumbers";
-            sendMetric.CalcValues(number1, number2, result, typeofcalculation);
+
+            // Send results as metrics to metric database
+            string TimeSerie = "DivisionNumbers";
+            object[] Values = new object[3] { number1, number2, result };
+            string[] Columns = new string[3] { "Value1", "Value2", "Result" };
+            metric.SendMetrics(TimeSerie, Columns, Values);
+            // Done
             return result;
         }
     }

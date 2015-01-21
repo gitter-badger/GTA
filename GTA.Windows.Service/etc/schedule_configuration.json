@@ -1,0 +1,6 @@
+﻿{
+    "schedules": [ 
+        {"name": "Test", "type": "weekly"}
+    ]
+
+}
